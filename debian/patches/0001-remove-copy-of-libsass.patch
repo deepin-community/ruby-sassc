@@ -1,0 +1,30 @@
+Index: ruby-sassc/lib/sassc/native.rb
+===================================================================
+--- ruby-sassc.orig/lib/sassc/native.rb
++++ ruby-sassc/lib/sassc/native.rb
+@@ -7,11 +7,7 @@ module SassC
+     extend FFI::Library
+ 
+     dl_ext = RbConfig::MAKEFILE_CONFIG['DLEXT']
+-    begin
+-      ffi_lib File.expand_path("libsass.#{dl_ext}", __dir__)
+-    rescue LoadError # Some non-rvm environments don't copy a shared object over to lib/sassc
+-      ffi_lib File.expand_path("libsass.#{dl_ext}", "#{__dir__}/../../ext")
+-    end
++    ffi_lib "/usr/lib/#{RbConfig::CONFIG['arch']}/libsass.#{dl_ext}"
+ 
+     require_relative "native/sass_value"
+ 
+Index: ruby-sassc/sassc.gemspec
+===================================================================
+--- ruby-sassc.orig/sassc.gemspec
++++ ruby-sassc/sassc.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
+   spec.require_paths = ["lib"]
+ 
+   spec.platform      = Gem::Platform::RUBY
+-  spec.extensions    = ["ext/extconf.rb"]
++ # spec.extensions    = ["ext/extconf.rb"]
+ 
+   spec.add_development_dependency "minitest", "~> 5.5.1"
+   spec.add_development_dependency "minitest-around"

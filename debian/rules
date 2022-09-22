@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+#export GEM2DEB_TEST_RUNNER = --check-dependencies
+export DH_RUBY = --gem-install
+
+%:
+	dh $@ --buildsystem=ruby --with ruby
+
+#clean:
+#	dh_clean
+#	rm -rf ext/libsass/src/*.o
+#	rm -rf ext/libsass/lib/libsass.so
+#	rm -rf ext/libsass/src/memory/SharedPtr.o

@@ -1,0 +1,64 @@
+ruby-sassc (2.4.0+ds-1) unstable; urgency=medium
+
+  * Team upload 
+
+  [ Cédric Boutillier ]
+  * Update team name
+  * Add .gitattributes to keep unwanted files out of the source package
+
+  [ Debian Janitor ]
+  * Update watch file format version to 4.
+  * Set field Upstream-Contact in debian/copyright.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Remove obsolete field Contact from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+
+  [ Manas Kashyap ]
+  * New upstream version 2.4.0
+  * Bump Standards-Version to 4.5.1 (no changes needed)
+  * patches refreshed
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
+
+  [ Pirate Praveen ]
+  * New upstream version 2.4.0 (import with gbp for upstream and pristine-tar)
+  * Bump Standards-Version to 4.6.0 (no changes needed)
+  * Use ${ruby:Depends} and remove ruby-interpreter dependency
+  * Add +ds suffix to version and use xz compression
+  * Remove trailing / in Files-Excluded
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 14 Sep 2021 19:41:38 +0530
+
+ruby-sassc (2.2.1-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Anthony Fok ]
+  * New upstream version 2.2.1
+  * Update dependency on libsass-dev to (>= 3.6.1) as per upstream
+  * Bump debhelper dependency to "Build-Depends: debhelper-compat (= 12)"
+  * Bump Standards-Version to 4.5.0 (no changes needed)
+  * Refresh patches
+
+ -- Anthony Fok <foka@debian.org>  Tue, 03 Mar 2020 08:42:18 -0700
+
+ruby-sassc (2.0.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Source only reupload for bullseye
+  * Bump Standards-Version to 4.4.0 (no changes needed)
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 06 Aug 2019 17:42:29 +0000
+
+ruby-sassc (2.0.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #923810)
+
+ -- Manas Kashyap <manaskashyaptech@gmail.com>  Tue, 05 Mar 2019 22:01:16 +0530

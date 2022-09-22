@@ -1,0 +1,37 @@
+Source: ruby-sassc
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Manas Kashyap <manaskashyaptech@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               rake,
+               ruby-ffi,
+               ruby-minitest,
+               ruby-minitest-around,
+               ruby-test-construct,
+               libsass-dev (>= 3.6.1),
+               pry
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-sassc.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-sassc
+Homepage: https://github.com/sass/sassc-ruby
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-sassc
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: rake,
+         ruby-ffi,
+         libsass-dev (>= 3.6.1),
+         ${ruby:Depends},
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Ruby module to use libsass
+ Sass is a pre-processing language for CSS.
+ .
+ This Ruby library uses libsass, a C/C++ port of the Sass engine,
+ to compile SCSS or Sass syntax to CSS, with the speed of this engine
+ and the ease of use of original Ruby Sass library.
