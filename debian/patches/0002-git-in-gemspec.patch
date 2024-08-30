@@ -1,7 +1,16 @@
-Index: ruby-sassc/sassc.gemspec
+From: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Date: Thu, 25 Jul 2024 23:24:23 +0200
+Subject: git-in-gemspec
+
 ===================================================================
---- ruby-sassc.orig/sassc.gemspec
-+++ ruby-sassc/sassc.gemspec
+---
+ sassc.gemspec | 31 +------------------------------
+ 1 file changed, 1 insertion(+), 30 deletions(-)
+
+diff --git a/sassc.gemspec b/sassc.gemspec
+index 83a9c08..270b77a 100644
+--- a/sassc.gemspec
++++ b/sassc.gemspec
 @@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
    spec.homepage      = "https://github.com/sass/sassc-ruby"
    spec.license       = "MIT"
