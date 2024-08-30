@@ -1,6 +1,20 @@
+ruby-sassc (2.4.0+ds-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+
+  [ Cédric Boutillier ]
+  * Use Minitest module instead of MiniTest compatibility layer
+    + ruby3.3 support
+  * Bump Standards-Version to 4.7.0 (no changes needed)
+
+ -- Cédric Boutillier <boutil@debian.org>  Thu, 25 Jul 2024 23:33:32 +0200
+
 ruby-sassc (2.4.0+ds-1) unstable; urgency=medium
 
-  * Team upload 
+  * Team upload
 
   [ Cédric Boutillier ]
   * Update team name

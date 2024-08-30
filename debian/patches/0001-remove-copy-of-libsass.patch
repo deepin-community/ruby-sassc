@@ -1,7 +1,17 @@
-Index: ruby-sassc/lib/sassc/native.rb
+From: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Date: Thu, 25 Jul 2024 23:24:23 +0200
+Subject: remove-copy-of-libsass
+
 ===================================================================
---- ruby-sassc.orig/lib/sassc/native.rb
-+++ ruby-sassc/lib/sassc/native.rb
+---
+ lib/sassc/native.rb | 6 +-----
+ sassc.gemspec       | 2 +-
+ 2 files changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/lib/sassc/native.rb b/lib/sassc/native.rb
+index 3b9f515..9143158 100644
+--- a/lib/sassc/native.rb
++++ b/lib/sassc/native.rb
 @@ -7,11 +7,7 @@ module SassC
      extend FFI::Library
  
@@ -15,10 +25,10 @@ Index: ruby-sassc/lib/sassc/native.rb
  
      require_relative "native/sass_value"
  
-Index: ruby-sassc/sassc.gemspec
-===================================================================
---- ruby-sassc.orig/sassc.gemspec
-+++ ruby-sassc/sassc.gemspec
+diff --git a/sassc.gemspec b/sassc.gemspec
+index 912df0d..83a9c08 100644
+--- a/sassc.gemspec
++++ b/sassc.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
    spec.require_paths = ["lib"]
  

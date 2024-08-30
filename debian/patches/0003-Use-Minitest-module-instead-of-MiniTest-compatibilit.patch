@@ -1,0 +1,102 @@
+From: Otto Liljalaakso <otto.liljalaakso@iki.fi>
+Date: Sat, 2 Sep 2023 22:04:43 +0300
+Subject: Use Minitest module instead of MiniTest compatibility layer
+
+The Minitest package has long been capitalized like that. The variant
+MiniTest is retained only as a compatibility layer. Switch to the
+current module name.
+
+This change is motivated by Fedora, which already uses minitest 5.19.
+That version requires setting the env variable MT_COMPAT to import the
+compatibility module, and thus revealed the problem in Fedora build
+system.
+
+Signed-off-by: Otto Liljalaakso <otto.liljalaakso@iki.fi>
+Origin: https://github.com/sass/sassc-ruby/pull/242/commits/6a59496c74f607e8a47637a058e04c8220994e27
+---
+ test/custom_importer_test.rb | 2 +-
+ test/engine_test.rb          | 2 +-
+ test/error_test.rb           | 2 +-
+ test/functions_test.rb       | 2 +-
+ test/output_style_test.rb    | 2 +-
+ test/sass_2_scss_test.rb     | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/test/custom_importer_test.rb b/test/custom_importer_test.rb
+index b803b13..5954674 100644
+--- a/test/custom_importer_test.rb
++++ b/test/custom_importer_test.rb
+@@ -3,7 +3,7 @@
+ require_relative "test_helper"
+ 
+ module SassC
+-  class CustomImporterTest < MiniTest::Test
++  class CustomImporterTest < Minitest::Test
+     include TempFileTest
+ 
+     class CustomImporter < Importer
+diff --git a/test/engine_test.rb b/test/engine_test.rb
+index 29681d7..800ef5a 100644
+--- a/test/engine_test.rb
++++ b/test/engine_test.rb
+@@ -3,7 +3,7 @@
+ require_relative "test_helper"
+ 
+ module SassC
+-  class EngineTest < MiniTest::Test
++  class EngineTest < Minitest::Test
+     include TempFileTest
+ 
+     def render(data)
+diff --git a/test/error_test.rb b/test/error_test.rb
+index 1caa316..474c237 100644
+--- a/test/error_test.rb
++++ b/test/error_test.rb
+@@ -3,7 +3,7 @@
+ require_relative "test_helper"
+ 
+ module SassC
+-  class ErrorTest < MiniTest::Test
++  class ErrorTest < Minitest::Test
+     def render(data, opts={})
+       Engine.new(data, opts).render
+     end
+diff --git a/test/functions_test.rb b/test/functions_test.rb
+index 7771672..fd8407f 100644
+--- a/test/functions_test.rb
++++ b/test/functions_test.rb
+@@ -4,7 +4,7 @@ require_relative "test_helper"
+ require "stringio"
+ 
+ module SassC
+-  class FunctionsTest < MiniTest::Test
++  class FunctionsTest < Minitest::Test
+     include FixtureHelper
+ 
+     def setup
+diff --git a/test/output_style_test.rb b/test/output_style_test.rb
+index f9a9059..20b8e20 100644
+--- a/test/output_style_test.rb
++++ b/test/output_style_test.rb
+@@ -3,7 +3,7 @@
+ require_relative "test_helper"
+ 
+ module SassC
+-  class OutputStyleTest < MiniTest::Test
++  class OutputStyleTest < Minitest::Test
+     def input_scss
+       input_scss = <<-CSS
+ $color: #fff;
+diff --git a/test/sass_2_scss_test.rb b/test/sass_2_scss_test.rb
+index 85282f3..fd368a5 100644
+--- a/test/sass_2_scss_test.rb
++++ b/test/sass_2_scss_test.rb
+@@ -3,7 +3,7 @@
+ require_relative "test_helper"
+ 
+ module SassC
+-  class Sass2ScssTest < MiniTest::Test
++  class Sass2ScssTest < Minitest::Test
+     def test_compact_output
+       assert_equal ".blat { color: red; }", Sass2Scss.convert(<<SASS)
+ .blat

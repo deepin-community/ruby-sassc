@@ -12,17 +12,15 @@ Build-Depends: debhelper-compat (= 13),
                ruby-test-construct,
                libsass-dev (>= 3.6.1),
                pry
-Standards-Version: 4.6.0
+Standards-Version: 4.7.0
 Vcs-Git: https://salsa.debian.org/ruby-team/ruby-sassc.git
 Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-sassc
 Homepage: https://github.com/sass/sassc-ruby
 Testsuite: autopkgtest-pkg-ruby
-XS-Ruby-Versions: all
 Rules-Requires-Root: no
 
 Package: ruby-sassc
 Architecture: all
-XB-Ruby-Versions: ${ruby:Versions}
 Depends: rake,
          ruby-ffi,
          libsass-dev (>= 3.6.1),
